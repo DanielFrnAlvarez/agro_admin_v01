@@ -30,7 +30,7 @@ class _RememberMeCheckBoxState extends State<RemindMeCheckBox> {
           }),
         ),
         const SizedBox(width: 10),
-        const Text('Guardar sesión', style: AppTypography.caption),
+        Text('Guardar sesión', style: AppTypography.caption),
       ],
     );
   }

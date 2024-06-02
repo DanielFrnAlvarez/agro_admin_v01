@@ -1,31 +1,37 @@
+import 'package:agro_admin/config/theme/colors.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 
 class AppTypography {
   static const String primaryFontFamily = 'Roboto';
 
-  static const TextStyle titleLarge = TextStyle(
+  static TextStyle titleLarge = TextStyle(
+    color: appColorMap['primary'],
     fontFamily: primaryFontFamily,
     fontSize: 64.0,
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle title = TextStyle(
+  static TextStyle title = TextStyle(
+    color: appColorMap['primary'],
     fontSize: 32.0,
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle subtitle = TextStyle(
+  static TextStyle subtitle = TextStyle(
+    color: appColorMap['primary'],
     fontSize: 24.0,
     fontWeight: FontWeight.w600, // SEMI BOLD equivalent
   );
 
-  static const TextStyle body = TextStyle(
+  static TextStyle body = TextStyle(
+    color: appColorMap['primary'],
     fontSize: 18.0,
     fontWeight: FontWeight.w500, // MEDIUM equivalent
   );
 
-  static const TextStyle caption = TextStyle(
+  static TextStyle caption = TextStyle(
+    color: appColorMap['primary'],
     fontSize: 16.0,
   );
 }

@@ -1,3 +1,4 @@
+import 'package:agro_admin/config/theme/colors.dart';
 import 'package:agro_admin/config/theme/typography.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
@@ -12,7 +13,7 @@ class RightSide extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 50),
-        const Text('Bienvenido', style: AppTypography.titleLarge),
+        Text('Bienvenido', style: AppTypography.titleLarge),
         const SizedBox(height: 100),
         Center(
           child: SizedBox(
@@ -20,7 +21,7 @@ class RightSide extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Iniciar sesión', style: AppTypography.title),
+                Text('Iniciar sesión', style: AppTypography.title),
                 const SizedBox(height: 90),
                 const LoginInput('Usuario', false),
                 const SizedBox(height: 70),
@@ -29,6 +30,7 @@ class RightSide extends StatelessWidget {
                 const RemindMeCheckBox(),
                 const SizedBox(height: 70),
                 FilledButton(
+                  style: ButtonStyle(backgroundColor: ButtonState.all(appColorMap['primary'])),
                   child: const Text(
                     'Iniciar sesión',
                   ),
