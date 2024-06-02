@@ -1,8 +1,9 @@
-import 'package:agro_admin/config/theme/app_theme.dart';
-import 'package:agro_admin/presentation/providers/theme_provider.dart';
-import 'package:agro_admin/presentation/screens/login/login_screen.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:agro_admin/config/router/app_router.dart';
+import 'package:agro_admin/config/theme/app_theme.dart';
+import 'package:agro_admin/presentation/providers/theme_provider.dart';
 
 void main() {
   runApp(
@@ -18,16 +19,11 @@ class MainApp extends ConsumerWidget  {
 
     final AppTheme appTheme = ref.watch(themeNotifierProvider);
 
-    return FluentApp(
+    return FluentApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       themeMode: appTheme.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       theme: appTheme.getTheme(),
-      home: const ScaffoldPage(
-        padding: EdgeInsets.zero,
-        content: Center(
-          child: LoginScreen(),
-        ),
-      ),
     );
   }
 }

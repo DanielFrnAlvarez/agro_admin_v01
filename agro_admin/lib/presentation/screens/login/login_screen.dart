@@ -6,19 +6,23 @@ import 'package:agro_admin/presentation/screens/login/right_side/right_side.dart
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
+  static const String name = 'LoginScreen';
+
   @override
   Widget build(BuildContext context) {
     return const ScaffoldPage(
       padding: EdgeInsets.zero,
-      content: Row(
-        children: [
-          Expanded(
-            child: LeftSide(),
-          ),
-          Expanded(
-            child: RightSide(),
-          ),
-        ],
+      content: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: LeftSide(),
+            ),
+            Expanded(
+              child: RightSide(),
+            ),
+          ],
+        ),
       ),
     );
   }

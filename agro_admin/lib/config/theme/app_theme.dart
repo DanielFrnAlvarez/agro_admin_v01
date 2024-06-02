@@ -6,7 +6,7 @@ class AppTheme {
   final bool isDarkMode;
 
   AppTheme({
-    this.isDarkMode = true,
+    this.isDarkMode = false,
   });
 
   final Color primaryColor = appColorMap['primary'] ?? appDefaultColor;
