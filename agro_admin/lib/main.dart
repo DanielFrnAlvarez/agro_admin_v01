@@ -24,6 +24,7 @@ class MainApp extends ConsumerWidget  {
       debugShowCheckedModeBanner: false,
       themeMode: appTheme.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       theme: appTheme.getTheme(),
+      darkTheme: appTheme.getTheme(isDark: true), 
     );
   }
 }

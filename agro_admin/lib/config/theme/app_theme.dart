@@ -4,24 +4,18 @@ import 'package:fluent_ui/fluent_ui.dart';
 
 class AppTheme {
   final bool isDarkMode;
+  final Color primaryColor;
 
   AppTheme({
     this.isDarkMode = false,
+    required this.primaryColor,
   });
 
-  final Color primaryColor = appColorMap['primary'] ?? appDefaultColor;
-
-  FluentThemeData getTheme() => FluentThemeData(
-        brightness: isDarkMode ? Brightness.dark : Brightness.light,
+  FluentThemeData getTheme({bool isDark = false}) => FluentThemeData(
+        brightness: isDark ? Brightness.dark : Brightness.light,
         scaffoldBackgroundColor:
-            isDarkMode ? appColorMap['darkGray'] : appColorMap['white'],
-        accentColor: AccentColor.swatch({
-          'normal': primaryColor,
-          'lighter': primaryColor.withOpacity(0.7),
-          'light': primaryColor.withOpacity(0.5),
-          'dark': primaryColor.withOpacity(0.9),
-          'darker': primaryColor.withOpacity(1.0),
-        }),
+            isDark ? appColorMap['darkGray'] : appColorMap['white'],
+        accentColor: defineThemeModeColor(),
         activeColor: primaryColor,
         fontFamily: AppTypography.primaryFontFamily,
         typography: Typography.raw(
@@ -33,10 +27,23 @@ class AppTheme {
         ),
       );
 
+  AccentColor defineThemeModeColor() {
+
+    return AccentColor.swatch({
+        'normal': primaryColor,
+        'lighter': primaryColor.withOpacity(0.7),
+        'light': primaryColor.withOpacity(0.5),
+        'dark': primaryColor.withOpacity(0.9),
+        'darker': primaryColor.withOpacity(1.0),
+      });
+  }
+
   AppTheme copyWith({
     bool? isDarkMode,
+    required Color primaryColor,
   }) =>
       AppTheme(
         isDarkMode: isDarkMode ?? this.isDarkMode,
+        primaryColor: primaryColor,
       );
 }
