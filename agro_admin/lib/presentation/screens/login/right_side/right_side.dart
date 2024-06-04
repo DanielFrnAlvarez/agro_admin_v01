@@ -1,5 +1,4 @@
 import 'package:agro_admin/config/theme/app_theme.dart';
-import 'package:agro_admin/config/theme/colors.dart';
 import 'package:agro_admin/config/theme/typography.dart';
 import 'package:agro_admin/presentation/providers/theme_provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
@@ -14,10 +13,25 @@ class RightSide extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    void changeThemeMode() => ref.read(themeNotifierProvider.notifier).changeThemeMode();
-    
+    final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
+
+    void changeThemeMode() =>
+        ref.read(themeNotifierProvider.notifier).changeThemeMode();
+
     return Column(
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,15,15,0),
+              child: IconButton(
+                icon: Icon(isDarkMode ? FluentIcons.light : FluentIcons.clear_night, size: 24.0),
+                onPressed: () => changeThemeMode(),
+              ),
+            ),
+          ],
+        ),
         const SizedBox(height: 50),
         Text('Bienvenido', style: AppTypography.titleLarge),
         const SizedBox(height: 100),
@@ -36,11 +50,10 @@ class RightSide extends ConsumerWidget {
                 const RemindMeCheckBox(),
                 const SizedBox(height: 70),
                 FilledButton(
-                  child: const Text(
-                    'Iniciar sesión',
-                  ),
-                  onPressed: () => changeThemeMode()
-                )
+                    child: const Text(
+                      'Iniciar sesión',
+                    ),
+                    onPressed: () => changeThemeMode())
               ],
             ),
           ),
