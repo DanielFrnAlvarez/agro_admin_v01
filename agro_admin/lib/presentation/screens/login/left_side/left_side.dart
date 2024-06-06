@@ -1,4 +1,3 @@
-import 'package:agro_admin/config/theme/app_theme.dart';
 import 'package:agro_admin/config/theme/colors.dart';
 import 'package:agro_admin/config/theme/typography.dart';
 import 'package:agro_admin/presentation/providers/theme_provider.dart';

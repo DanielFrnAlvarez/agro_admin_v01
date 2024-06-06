@@ -13,7 +13,9 @@ class LoginScreen extends StatelessWidget {
     return const ScaffoldPage(
       padding: EdgeInsets.zero,
       content: Center(
-        child: Row(
+        child: Flex(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          direction: Axis.horizontal,
           children: [
             Expanded(
               child: LeftSide(),

@@ -5,7 +5,6 @@ class AppTypography {
   static const String primaryFontFamily = 'Roboto';
 
   static TextStyle titleLarge = const TextStyle(
-    fontFamily: primaryFontFamily,
     fontSize: 64.0,
     fontWeight: FontWeight.w500,
   );
