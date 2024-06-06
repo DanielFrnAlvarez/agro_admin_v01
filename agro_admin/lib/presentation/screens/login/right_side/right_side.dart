@@ -1,7 +1,9 @@
-import 'package:agro_admin/config/theme/typography.dart';
-import 'package:agro_admin/presentation/providers/theme_provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+
+import 'package:agro_admin/config/theme/typography.dart';
+import 'package:agro_admin/presentation/widgets/change_theme_dark_light.dart';
 
 import 'widgets/login_input.dart';
 import 'widgets/remember_me_check_box.dart';
@@ -11,28 +13,10 @@ class RightSide extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
-    final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
-
-    void changeThemeMode() =>
-        ref.read(themeNotifierProvider.notifier).changeThemeMode();
-
     return SingleChildScrollView(
       child: Column(
         children: [
-          // TODO SEPARAR ESTO ES UN WIDGET YA QUE PUEDE SER REUTILIZADO
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0,15,15,0),
-                child: IconButton(
-                  icon: Icon(isDarkMode ? FluentIcons.light : FluentIcons.clear_night, size: 24.0),
-                  onPressed: () => changeThemeMode(),
-                ),
-              ),
-            ],
-          ),
+          const ChangeThemeDarkLight(),
           const SizedBox(height: 50),
           Text('Bienvenido', style: AppTypography.titleLarge),
           const SizedBox(height: 100),
@@ -54,7 +38,7 @@ class RightSide extends ConsumerWidget {
                       child: const Text(
                         'Iniciar sesión',
                       ),
-                      onPressed: () => changeThemeMode())
+                      onPressed: () => context.push('/'))
                 ],
               ),
             ),
