@@ -1,3 +1,4 @@
+import 'package:agro_admin/config/theme/typography.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 import 'package:agro_admin/config/menu/app_menu_items.dart';
@@ -14,7 +15,7 @@ class SideMenu extends StatefulWidget {
 
 class SideMenuState extends State<SideMenu> {
   int topIndex = 0;
-  PaneDisplayMode displayMode = PaneDisplayMode.open;
+  PaneDisplayMode displayMode = PaneDisplayMode.compact;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +29,12 @@ class SideMenuState extends State<SideMenu> {
     return ScaffoldPage(
       padding: const EdgeInsets.all(0),
       content: NavigationView(
-        appBar: const NavigationAppBar(
-          title: Text('AgroAdmin Dashboard'),
-          actions: ChangeThemeDarkLight(),
+        appBar: NavigationAppBar(
+          title: Text(
+            'AgroAdmin Dashboard',
+            style: AppTypography.subtitle,
+          ),
+          actions: const ChangeThemeDarkLight(),
         ),
         pane: NavigationPane(
             selected: topIndex,

@@ -23,11 +23,11 @@ class CustomersScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
-                flex: 6,
+                flex: 4,
                 child: CustomersLeftSide(),
               ),
               Flexible(
-                flex: 4,
+                flex: 6,
                 child: CustomersRightSide(),
               ),
             ],
