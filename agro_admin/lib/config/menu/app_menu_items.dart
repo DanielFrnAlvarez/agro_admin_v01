@@ -18,13 +18,13 @@ class MenuItem{
 
 const appMenuItems = <MenuItem>{
   MenuItem(
-    title: 'Dashboard',
-    body: DashboardScreen(),
-    icon: FluentIcons.view_dashboard,
-  ),
-  MenuItem(
     title: 'Customers',
     body: CustomersScreen(),
     icon: FluentIcons.contact_list,
+  ),
+  MenuItem(
+    title: 'Dashboard',
+    body: DashboardScreen(),
+    icon: FluentIcons.view_dashboard,
   ),
 };

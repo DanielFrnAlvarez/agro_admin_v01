@@ -31,7 +31,7 @@ class SideMenuState extends State<SideMenu> {
       content: NavigationView(
         appBar: NavigationAppBar(
           title: Text(
-            'AgroAdmin Dashboard',
+            'AgroAdmin',
             style: AppTypography.subtitle,
           ),
           actions: const ChangeThemeDarkLight(),
