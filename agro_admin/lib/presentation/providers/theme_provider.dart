@@ -14,7 +14,7 @@ final primaryColorLight = appColorMap['primaryLight']!;
 final primaryColorDark = appColorMap['primaryDark']!;
 
 class ThemeNotifier extends StateNotifier<AppTheme> {
-  ThemeNotifier() : super(AppTheme(primaryColor: primaryColorLight));
+  ThemeNotifier() : super(AppTheme(primaryColor: primaryColorDark));
 
   void changeThemeMode() {
     final isDarkMode = !state.isDarkMode;

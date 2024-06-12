@@ -14,9 +14,8 @@ class LoginLeftSide extends ConsumerWidget {
     final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     return Container(
-      color: isDarkMode
-          ? appColorMap['primaryLight']
-          : appColorMap['primaryDark'],
+      color:
+          isDarkMode ? appColorMap['primaryLight'] : appColorMap['primaryDark'],
       child: Center(
         child: Column(
           children: [
