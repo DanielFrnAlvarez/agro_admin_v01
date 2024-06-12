@@ -1,4 +1,3 @@
-import 'package:agro_admin/presentation/screens/main_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'package:agro_admin/presentation/screens/screens.dart';
 
@@ -12,13 +11,8 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: '/',
-      name: MainScreen.name,
-      builder: (context, state) => const MainScreen(),
-    ),
-    GoRoute(
-      path: '/dashboard_screen',
-      name: DashboardScreen.name,
-      builder: (context, state) => const DashboardScreen(),
+      name: BaseScreen.name,
+      builder: (context, state) => const BaseScreen(),
     )
   ]
 );

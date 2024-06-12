@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:agro_admin/config/theme/typography.dart';
-import 'package:agro_admin/presentation/widgets/change_theme_dark_light.dart';
+import 'package:agro_admin/presentation/widgets/common/change_theme_dark_light.dart';
 
 import 'widgets/login_input.dart';
 import 'widgets/remember_me_check_box.dart';
