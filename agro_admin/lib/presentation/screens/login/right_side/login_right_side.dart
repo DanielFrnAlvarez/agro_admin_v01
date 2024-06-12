@@ -8,8 +8,8 @@ import 'package:agro_admin/presentation/widgets/common/change_theme_dark_light.d
 import 'widgets/login_input.dart';
 import 'widgets/remember_me_check_box.dart';
 
-class RightSide extends ConsumerWidget {
-  const RightSide({super.key});
+class LoginRightSide extends ConsumerWidget {
+  const LoginRightSide({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

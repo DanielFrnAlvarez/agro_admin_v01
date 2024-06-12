@@ -4,8 +4,8 @@ import 'package:agro_admin/presentation/providers/theme_provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LeftSide extends ConsumerWidget {
-  const LeftSide({
+class LoginLeftSide extends ConsumerWidget {
+  const LoginLeftSide({
     super.key,
   });
 
